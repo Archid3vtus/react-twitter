@@ -1,0 +1,47 @@
+.font-xx-small {
+  font-size: 9px;
+}
+
+.font-x-small {
+  font-size: 10px;
+}
+
+.font-small {
+  font-size: 13px;
+}
+
+.font-medium {
+  font-size: 16px;
+}
+
+.font-large {
+  font-size: 18px;
+}
+
+.font-x-large {
+  font-size: 24px;
+}
+
+.font-xx-large {
+  font-size: 32px;
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
+.font-x-light {
+  font-weight: 200;
+}
+
+.font-light {
+  font-weight: 400;
+}
+
+.font-bold {
+  font-weight: 800;
+}
+
+.unset-overflow {
+  overflow-wrap: unset;
+}

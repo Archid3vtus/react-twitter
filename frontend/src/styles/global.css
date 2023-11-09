@@ -1,0 +1,9 @@
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  background-color: black;
+  margin: 0;
+}

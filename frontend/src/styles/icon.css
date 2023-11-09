@@ -1,0 +1,19 @@
+.twitter-icon {
+  display: block;
+  width: 48px;
+  height: auto;
+  padding: 16px 0;
+}
+
+.menu-icon {
+  font-size: 32px;
+  padding-left: 6px;
+}
+
+.profile-icon {
+  display: block;
+  width: 40px;
+  height: auto;
+  border-radius: 40px;
+  padding: 10px;
+}

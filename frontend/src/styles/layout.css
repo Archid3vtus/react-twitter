@@ -1,0 +1,87 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.margin-null {
+  margin: 0;
+}
+
+.margin-horizontal-xx-small {
+  margin-left: 9px;
+  margin-right: 9px;
+}
+
+.margin-horizontal-medium {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.margin-horizontal-x-large {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.margin-horizontal-xx-large {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.margin-vertical-xx-small {
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.margin-vertical-medium {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.margin-vertical-x-large {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.margin-vertical-xx-large {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.menu-size {
+  height: 100vh;
+  min-width: 260px;
+  max-width: 260px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
