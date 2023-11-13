@@ -99,7 +99,16 @@ export default function Menu() {
   return (
     <div className="flex-column menu-size justify-space-between">
       <div className={`flex-column`}>
-        <Image src={twitterLogo} alt="Twitter logo" className="twitter-icon" />
+        <div
+          className="twitter-button"
+          onClick={() => dispatch(setSelection("home"))}
+        >
+          <Image
+            src={twitterLogo}
+            alt="Twitter logo"
+            className="twitter-icon"
+          />
+        </div>
         {menuOptions.map((option) => (
           <Option
             icon={`bi ${

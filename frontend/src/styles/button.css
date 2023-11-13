@@ -17,6 +17,12 @@ button {
   transition: 0.3s;
 }
 
+.send-tweet {
+  background-color: rgb(29, 155, 240);
+  padding: 6px 16px;
+  border-radius: 16px;
+}
+
 .tweet-button:hover {
   background-color: rgb(26, 140, 216);
 }
@@ -41,8 +47,44 @@ button {
   transition: 0.3s;
   border-radius: 56px;
   padding-left: 4px;
+  margin: 0 4px;
 }
 
 .sidebar-button:hover {
   background-color: rgb(231, 233, 234, 0.1);
+}
+
+.twitter-button {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  cursor: pointer;
+  border-radius: 66px;
+  transition: 0.3s;
+}
+
+.twitter-button:hover {
+  background-color: rgb(231, 233, 234, 0.1);
+}
+
+.tweet-reach {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tweet-reach:hover {
+  background-color: rgb(29, 155, 240, 0.1);
+}
+
+.attachment-button {
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 26px;
+}
+
+.attachment-button:hover {
+  background-color: rgb(29, 155, 240, 0.1);
 }

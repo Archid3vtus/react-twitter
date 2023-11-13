@@ -38,10 +38,10 @@
   font-weight: 400;
 }
 
-.font-bold {
-  font-weight: 800;
+.font-normal {
+  font-weight: 600;
 }
 
-.unset-overflow {
-  overflow-wrap: unset;
+.font-bold {
+  font-weight: 800;
 }

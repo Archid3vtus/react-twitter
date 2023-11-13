@@ -1,5 +1,7 @@
 import "../styles/global.css";
+import "../styles/layout.css";
 import Providers from "./redux/Providers";
+import Menu from "../components/Menu";
 
 export const metadata = {
   title: "Next.js",
@@ -14,7 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="flex-row justify-center">
+            <Menu />
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );
