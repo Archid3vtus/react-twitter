@@ -119,7 +119,6 @@
   max-width: 520px;
   outline: none;
   padding-top: 20px;
-  padding-bottom: 10px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -155,4 +154,30 @@
   border-top: 1px solid;
   border-color: rgb(47, 51, 54);
   padding-top: 10px;
+}
+
+.search-bar {
+  width: 300px;
+  height: 44px;
+  padding: 2px 25px;
+  border-radius: 48px;
+  margin-top: 6px;
+  gap: 10px;
+
+  background-color: rgb(255, 255, 255, 0.1);
+  color: rgba(231, 233, 234, 1);
+}
+
+.search-bar > input {
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+  color: white;
+  resize: none;
+  font-family: "Open Sans";
+  width: 90%;
 }
