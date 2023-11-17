@@ -4,7 +4,7 @@ export default function SearchBar() {
   return (
     <div className="flex-row align-center search-bar">
       <i className="bi bi-search" />
-      <input placeholder="Search" />
+      <input id="to-search" placeholder="Search" />
     </div>
   );
 }

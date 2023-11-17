@@ -181,3 +181,27 @@
   font-family: "Open Sans";
   width: 90%;
 }
+
+.tweet-post-user-container {
+  gap: 2px;
+  padding-top: 8px;
+}
+
+.tweet {
+  padding: 4px 20px 4px 10px;
+  gap: 4px;
+  border-bottom: solid rgb(47, 51, 54) 1px;
+}
+
+.tweet-text-content {
+  width: 100%;
+}
+
+.tweet-post-text {
+  padding-top: 4px;
+}
+
+.tweet-interaction-icons {
+  padding-top: 14px;
+  padding-bottom: 6px;
+}

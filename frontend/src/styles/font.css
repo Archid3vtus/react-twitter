@@ -45,3 +45,7 @@
 .font-bold {
   font-weight: 800;
 }
+
+.font-gray {
+  color: gray;
+}

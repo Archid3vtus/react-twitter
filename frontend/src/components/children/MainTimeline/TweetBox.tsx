@@ -27,6 +27,7 @@ export default function TweetBox() {
       </div>
       <div className="flex-column tweet-content">
         <textarea
+          id="to-be-written"
           className="tweet-text font-large font-normal"
           placeholder="What's happening?"
           onInput={setTextAreaHeight}
