@@ -1,9 +1,18 @@
-"use client";
 import Image from "next/image";
-import React, { TextareaHTMLAttributes, useRef, useState } from "react";
+import React, { useState } from "react";
 import seiIcon from "../../../../public/example pfps/sei pfp.jpeg";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
+import { setTimeline } from "@/app/redux/slices/timeline";
 
 export default function TweetBox() {
+  const selected = useSelector((state: RootState) => state.timeline);
+  const dispatch = useDispatch();
+
+  const [content, setContent] = useState("");
+  const [displayName, setDisplayName] = useState("Sei Sei Sei");
+  const [username, setUsername] = useState("@seibast");
+
   const mapTweetAttachmentIconsToPurpose: { [key: string]: string } = {
     "bi-image": "Media",
     "bi-filetype-gif": "GIF",
@@ -31,6 +40,8 @@ export default function TweetBox() {
           className="tweet-text font-large font-normal"
           placeholder="What's happening?"
           onInput={setTextAreaHeight}
+          onChange={(e) => setContent(e.target.value)}
+          value={content}
         />
         <div className="flex-row align-center tweet-reach">
           <i className="bi bi-globe-americas"></i>
@@ -52,7 +63,24 @@ export default function TweetBox() {
               );
             })}
           </div>
-          <button className="send-tweet">Tweet</button>
+          <button
+            className="send-tweet"
+            onClick={() => {
+              dispatch(
+                setTimeline({
+                  pfp: seiIcon,
+                  displayName,
+                  username,
+                  timestamp: new Date().toISOString(),
+                  content,
+                })
+              );
+
+              setContent("");
+            }}
+          >
+            Tweet
+          </button>
         </div>
       </div>
     </div>

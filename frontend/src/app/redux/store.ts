@@ -2,10 +2,12 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import selectedPageReducer from "./slices/selectedPage";
+import timelineReducer from "./slices/timeline";
 
 export const store = configureStore({
   reducer: {
     selectedPage: selectedPageReducer,
+    timeline: timelineReducer,
   },
 });
 

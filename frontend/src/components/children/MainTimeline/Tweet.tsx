@@ -6,10 +6,23 @@ interface tweetProps {
   pfp: StaticImageData;
   name: string;
   username: string;
-  timeAgo: string;
+  timestamp: string;
 }
 
 export default function Tweet(props: tweetProps) {
+  const rtf = new Intl.RelativeTimeFormat("en", { style: "narrow" });
+  const relativeReference = ["seconds", "minutes", "hours"];
+
+  const dateNow = new Date();
+  const dateThen = new Date(props.timestamp);
+  let relativeDate = (+dateThen - +dateNow) / 1000;
+  let referenceIndex = 0;
+
+  while (referenceIndex < 3 && Math.sqrt(relativeDate ** 2) > 60) {
+    relativeDate = relativeDate / 60;
+    referenceIndex++;
+  }
+
   return (
     <div className="flex-row tweet">
       <div>
@@ -24,7 +37,10 @@ export default function Tweet(props: tweetProps) {
           </p>
           <i className="tweet-post-dot bi bi-dot font-gray margin-null"></i>
           <p className="tweet-post-timeago font-gray margin-null">
-            {props.timeAgo}
+            {rtf.format(
+              Math.floor(relativeDate),
+              relativeReference[referenceIndex] as any
+            )}
           </p>
         </div>
         <p className="tweet-post-text margin-null">{props.children}</p>
