@@ -12,6 +12,10 @@
   flex: 1;
 }
 
+.gap-small {
+  gap: 10px;
+}
+
 .justify-start {
   justify-content: start;
 }

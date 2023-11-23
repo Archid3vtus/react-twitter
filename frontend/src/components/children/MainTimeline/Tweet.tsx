@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 
 interface tweetProps {
   children: ReactNode;
@@ -10,6 +10,12 @@ interface tweetProps {
 }
 
 export default function Tweet(props: tweetProps) {
+  const [replies, setReplies] = useState(0);
+  const [retweets, setRetweets] = useState(0);
+  const [likes, setLikes] = useState(0);
+  const [likeRemoval, setLikeRemoval] = useState(1);
+  const [retweetRemoval, setRetweetRemoval] = useState(1);
+
   const rtf = new Intl.RelativeTimeFormat("en", { style: "narrow" });
   const relativeReference = ["seconds", "minutes", "hours"];
 
@@ -22,6 +28,28 @@ export default function Tweet(props: tweetProps) {
     relativeDate = relativeDate / 60;
     referenceIndex++;
   }
+
+  const mapIconToInteractionButton: { [key: string]: [number, Function] } = {
+    "bi-chat": [replies, () => setReplies(replies + 1)],
+    "bi-repeat": [
+      retweets,
+      () => {
+        setRetweets(retweets + retweetRemoval);
+        setRetweetRemoval(retweetRemoval * -1);
+      },
+    ],
+    "bi-star": [
+      likes,
+      () => {
+        setLikes(likes + likeRemoval);
+        setLikeRemoval(likeRemoval * -1);
+      },
+    ],
+    "bi-share": [
+      0,
+      () => window.alert("Sharing sharing sharing is caring caring caring!!!"),
+    ],
+  };
 
   return (
     <div className="flex-row tweet">
@@ -45,10 +73,20 @@ export default function Tweet(props: tweetProps) {
         </div>
         <p className="tweet-post-text margin-null">{props.children}</p>
         <div className="flex-row justify-space-between tweet-interaction-icons">
-          <i className="bi bi-chat font-gray"></i>
-          <i className="bi bi-repeat font-gray"></i>
-          <i className="bi bi-star font-gray"></i>
-          <i className="bi bi-share font-gray"></i>
+          {Object.keys(mapIconToInteractionButton).map((icon, index) => (
+            <div
+              className="flex-row align-center gap-small interaction-button"
+              onClick={() => mapIconToInteractionButton[icon][1]()}
+              key={index}
+            >
+              <i className={`bi ${icon} font-gray`} />
+              <p className="margin-null font-gray font-small">
+                {mapIconToInteractionButton[icon][0] > 0
+                  ? mapIconToInteractionButton[icon][0]
+                  : ""}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

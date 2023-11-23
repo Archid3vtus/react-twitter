@@ -1,12 +1,10 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import seiIcon from "../../../../public/example pfps/sei pfp.jpeg";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/app/redux/store";
+import { useDispatch } from "react-redux";
 import { setTimeline } from "@/app/redux/slices/timeline";
 
 export default function TweetBox() {
-  const selected = useSelector((state: RootState) => state.timeline);
   const dispatch = useDispatch();
 
   const [content, setContent] = useState("");
@@ -66,17 +64,19 @@ export default function TweetBox() {
           <button
             className="send-tweet"
             onClick={() => {
-              dispatch(
-                setTimeline({
-                  pfp: seiIcon,
-                  displayName,
-                  username,
-                  timestamp: new Date().toISOString(),
-                  content,
-                })
-              );
+              if (content.trim().length > 0) {
+                dispatch(
+                  setTimeline({
+                    pfp: seiIcon,
+                    displayName,
+                    username,
+                    timestamp: new Date().toISOString(),
+                    content,
+                  })
+                );
 
-              setContent("");
+                setContent("");
+              }
             }}
           >
             Tweet
