@@ -4,6 +4,12 @@
   height: auto;
 }
 
+.twitter-icon-gigantic {
+  display: block;
+  width: 400px;
+  height: auto;
+}
+
 .menu-icon {
   font-size: 32px;
   padding-left: 6px;

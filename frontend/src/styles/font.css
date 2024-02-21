@@ -26,6 +26,10 @@
   font-size: 32px;
 }
 
+.font-gigantic {
+  font-size: 64px;
+}
+
 .font-thin {
   font-weight: 100;
 }

@@ -17,6 +17,34 @@ button {
   transition: 0.3s;
 }
 
+.create-account-button {
+  height: 36px;
+  background-color: rgb(29, 155, 240);
+  border-radius: 18px;
+  font-weight: 600;
+  margin: 18px 0;
+  transition: 0.3s;
+  margin-bottom: 50px;
+}
+
+.create-account-button:hover {
+  background-color: rgb(26, 140, 216);
+}
+
+.login-button {
+  height: 36px;
+  border: 1px solid rgb(83, 100, 113);
+  border-radius: 18px;
+  font-weight: 600;
+  margin: 18px 0;
+  transition: 0.3s;
+  color: rgb(29, 155, 240);
+}
+
+.login-button:hover {
+  background-color: rgb(26, 140, 216, 0.2);
+}
+
 .send-tweet {
   background-color: rgb(29, 155, 240);
   padding: 6px 16px;
