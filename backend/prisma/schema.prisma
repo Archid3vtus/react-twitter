@@ -17,8 +17,8 @@ model User {
   id Int @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  username String
-  email String
+  username String @unique
+  email String @unique
   passwordDigest String
   profile Profile?
   followed FollowerRelationship[] @relation("Followed")
