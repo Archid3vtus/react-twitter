@@ -46,6 +46,7 @@ model FollowerRelationship {
   followedId Int
   follower User @relation(name: "Follower", fields: [followerId], references: [id])
   followerId Int
+  @@unique([followedId, followerId])
 }
 
 model Tweet {
